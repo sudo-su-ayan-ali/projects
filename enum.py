@@ -1,5 +1,4 @@
 import os
-import sys
 import subprocess
 import argparse
 
@@ -9,7 +8,7 @@ SUBDOMAINS_FILE = os.path.join(OUTPUT_DIR, "subdomains.txt")
 ALIVE_FILE = os.path.join(OUTPUT_DIR, "alive_subdomains.txt")
 SCREENSHOT_DIR = os.path.join(OUTPUT_DIR, "screenshots")
 
-def run_tool(cmd, outfile, verbose=False):
+def run_tool(cmd, outfile, verbose=True):
     try:
         if verbose:
             print(f"[VERBOSE] Running: {' '.join(cmd)} > {outfile}")
@@ -18,7 +17,7 @@ def run_tool(cmd, outfile, verbose=False):
     except Exception as e:
         print(f"[!] Failed to run {' '.join(cmd)}: {e}")
 
-def aggregate_subdomains(files, out_file, verbose=False):
+def aggregate_subdomains(files, out_file, verbose=True):
     subdomains = set()
     for file in files:
         if os.path.isfile(file):
@@ -40,15 +39,16 @@ def screenshot_alive(alive_file, screenshot_dir, verbose=False):
     print("[*] Taking screenshots of alive domains with gowitness...")
     try:
         cmd = [
-            "gowitness", "file", "-f", alive_file, "-P", screenshot_dir, "--disable-db"
+            "gowitness", "screenshot", "-f", alive_file, "-P", screenshot_dir, "--disable-db"
         ]
         if verbose:
             print(f"[VERBOSE] Running: {' '.join(cmd)}")
         subprocess.run(cmd, check=True)
         print(f"[*] Screenshots saved in {screenshot_dir}")
+    except FileNotFoundError:
+        print(f"[!] Screenshotting failed: gowitness not found. Please install gowitness to enable screenshots.")
     except Exception as e:
         print(f"[!] Screenshotting failed: {e}")
-
 def main():
     parser = argparse.ArgumentParser(description="Subdomain enumeration and screenshot tool")
     parser.add_argument("target", nargs="?", default=None, help="Target domain")
@@ -67,26 +67,23 @@ def main():
 
     subfinder_out = os.path.join(OUTPUT_DIR, "subfinder.txt")
     sublist3r_out = os.path.join(OUTPUT_DIR, "sublist3r.txt")
-    amass_out = os.path.join(OUTPUT_DIR, "amass.txt")
 
     # Run subfinder
     run_tool(["subfinder", "-d", TARGET, "-silent"], subfinder_out, args.verbose)
     # Run sublist3r
     run_tool(["sublist3r", "-d", TARGET, "-o", sublist3r_out], sublist3r_out, args.verbose)
-    # Run amass
-    run_tool(["amass", "enum", "-d", TARGET, "-silent"], amass_out, args.verbose)
 
     # Aggregate and deduplicate
-    aggregate_subdomains([subfinder_out, sublist3r_out, amass_out], SUBDOMAINS_FILE, args.verbose)
+    aggregate_subdomains([subfinder_out, sublist3r_out], SUBDOMAINS_FILE, args.verbose)
 
-    print("[*] Checking for alive subdomains with httpx...")
     try:
-        cmd = ["httpx", "-l", SUBDOMAINS_FILE, "-silent", "-o", ALIVE_FILE]
+        cmd = ["httpx", "-list", SUBDOMAINS_FILE, "-silent", "-o", ALIVE_FILE]
         if args.verbose:
             print(f"[VERBOSE] Running: {' '.join(cmd)}")
         subprocess.run(cmd, check=True)
         print(f"[*] Alive subdomains saved to {ALIVE_FILE}")
     except Exception as e:
+        print(f"[!] httpx failed: {e}")
         print(f"[!] httpx failed: {e}")
 
     # Screenshot alive domains
