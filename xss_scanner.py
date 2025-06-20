@@ -1,8 +1,12 @@
-import requests
-from urllib.parse import quote, urlparse, parse_qs, urlencode, urlunparse
-from bs4 import BeautifulSoup
+import os
 import sys
+import time
+import requests
 import urllib3
+from urllib.parse import quote, urlparse, parse_qs, urlencode, urlunparse, urljoin
+from bs4 import BeautifulSoup
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 
 # Common XSS payloads and bypasses (old and new)
 XSS_PAYLOADS = [
@@ -29,9 +33,6 @@ XSS_PAYLOADS = [
     "#<script>alert(1)</script>",
 ]
 
-def save_links_to_file(urls, filename="links.txt"):
-    """Save a list of URLs to a text file."""
-
 def print_help():
     help_text = """
 Usage: python test.py <url>
@@ -46,6 +47,9 @@ Example:
   python test.py "http://example.com/page?param=value"
 """
     print(help_text)
+
+def save_links_to_file(urls, filename="links.txt"):
+    """Save a list of URLs to a text file."""
     with open(filename, "w", encoding="utf-8") as f:
         for url in urls:
             f.write(url + "\n")
@@ -73,7 +77,6 @@ def find_xss(url):
         try:
             resp = requests.get(test_url, timeout=5, verify=False)
             for payload in XSS_PAYLOADS:
-                # Check for raw, HTML-escaped, and URL-encoded payloads in response
                 if (
                     payload in resp.text or
                     quote(payload) in resp.text or
@@ -90,8 +93,6 @@ def scan_forms(url):
     soup = BeautifulSoup(resp.text, "html.parser")
     forms = soup.find_all("form")
     found = []
-    from urllib.parse import urljoin
-
     for form in forms:
         action = form.get("action")
         if not action or action.strip() == "":
@@ -122,6 +123,34 @@ def scan_forms(url):
         except Exception:
             continue
     return found
+
+def take_screenshot(url, filename):
+    """Take a screenshot of the given URL and save it to the 'screenshoot' folder."""
+    folder = "screenshoot"
+    os.makedirs(folder, exist_ok=True)
+    filepath = os.path.join(folder, filename)
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--disable-gpu")
+    chrome_options.add_argument("--window-size=1200,800")
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_experimental_option("prefs", {"profile.default_content_setting_values.notifications": 2})
+
+    driver = webdriver.Chrome(options=chrome_options)
+    try:
+        driver.get(url)
+        time.sleep(2)
+        try:
+            alert = driver.switch_to.alert
+            alert.accept()
+            time.sleep(1)
+        except Exception:
+            pass
+        driver.save_screenshot(filepath)
+    finally:
+        driver.quit()
+    return filepath
 
 if __name__ == "__main__":
     urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
