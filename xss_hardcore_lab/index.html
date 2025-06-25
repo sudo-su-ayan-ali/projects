@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>XSS Practice Lab</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net;">
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f0f0f0; }
+    label, input, button { display: block; margin: 10px 0; }
+    #result { margin-top: 20px; font-weight: bold; white-space: pre-wrap; }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.5/dist/purify.min.js"></script>
+</head>
+<body>
+  <h2>🧪 XSS Practice Lab</h2>
+  <label><input type="checkbox" id="modeToggle" checked> Secure Mode</label>
+  <form id="xssForm">
+    <label for="payload">Enter Payload:</label>
+    <input type="text" id="payload" name="payload" size="50">
+    <button type="submit">Submit</button>
+  </form>
+  <div id="result"></div>
+
+  <script>
+    const form = document.getElementById('xssForm');
+    const input = document.getElementById('payload');
+    const result = document.getElementById('result');
+    const modeToggle = document.getElementById('modeToggle');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      let value = input.value.trim().normalize('NFKC');
+
+      if (value.length > 100) {
+        result.textContent = '❌ Input too long!';
+        result.style.color = 'red';
+        return;
+      }
+
+      if (modeToggle.checked) {
+        // Secure Mode
+        result.textContent = `✅ Output (textContent):\nHello, ${value}`;
+        result.style.color = 'green';
+      } else {
+        // Vulnerable Mode
+        result.innerHTML = `❌ Output (innerHTML):<br>Hello, ${value}`;
+        result.style.color = 'red';
+      }
+    });
+  </script>
+</body>
+</html>
