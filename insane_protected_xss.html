@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Secure XSS-Protected Form</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; object-src 'none';">
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f2f2f2;
+      padding: 20px;
+      max-width: 600px;
+    }
+    label, input, button {
+      display: block;
+      margin: 10px 0;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+  <!-- ✅ DOMPurify (for optional safe HTML rendering) -->
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.5/dist/purify.min.js"></script>
+</head>
+<body>
+
+  <h2>🛡️ Secure Input Form</h2>
+
+  <form id="safeForm">
+    <label for="username">Enter your name:</label>
+    <input type="text" id="username" name="username" placeholder="e.g. Alice">
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    // Helper (used in older versions – no longer needed with textContent)
+    function escapeHTML(str) {
+      return str.replace(/[&<>"'`=\/]/g, s => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;',
+        "'": '&#39;', '`': '&#96;', '=': '&#61;', '/': '&#47;'
+      })[s]);
+    }
+
+    // DOM references
+    const form = document.getElementById('safeForm');
+    const input = document.getElementById('username');
+    const result = document.getElementById('result');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      let value = input.value.trim();
+
+      // ✅ Normalize input (prevents unicode obfuscation)
+      value = value.normalize('NFKC');
+
+      // ✅ Enforce input length limit
+      if (value.length > 100) {
+        result.textContent = '❌ Input too long!';
+        result.style.color = 'red';
+        return;
+      }
+
+      // ✅ Safe Option A: use textContent (no HTML allowed — safest)
+      result.textContent = `✅ Hello, ${value}!`;
+      result.style.color = 'green';
+
+      // 🔒 Optional Safe Option B: use DOMPurify to allow limited HTML (e.g., <b>, <i>)
+      // result.innerHTML = `✅ Hello, ${DOMPurify.sanitize(value)}!`;
+
+      // 🧠 Optional context-aware examples for dev:
+      const safeURL = encodeURIComponent(value);
+      console.log(`Use in URL: /search?q=${safeURL}`);
+
+      const safeJS = value.replace(/'/g, "\\'").replace(/"/g, '\\"');
+      console.log(`Use in JS string: "${safeJS}"`);
+    });
+  </script>
+
+</body>
+</html>
