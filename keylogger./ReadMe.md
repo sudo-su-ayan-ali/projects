@@ -1,8 +1,4 @@
-Sure! Here's a simple `README.md` file for your Python keylogger script using `pynput`.
 
----
-
-```markdown
 # Simple Keylogger using Pynput
 
 This is a basic keylogger script written in Python that logs all keyboard keypresses to a file named `keylog.txt`.
@@ -83,8 +79,4 @@ Using keyloggers to monitor others without consent violates privacy rights and c
 ## ✅ License
 
 This project is open-source and available under the [MIT License](LICENSE).
-```
 
----
-
-Let me know if you'd like to include a `setup.py`, license file, or GUI.
