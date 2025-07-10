@@ -49,10 +49,5 @@ This project is for **educational purposes only**. Use responsibly.
 
 ````
 
----
 
-(You can still keep this file empty or include `hashlib` for clarity, although it's built-in.)
 
----
-
-Let me know if you want a version that supports more hashes (e.g., SHA-256, bcrypt, etc.) or includes a GUI or multithreading.
