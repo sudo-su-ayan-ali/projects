@@ -47,7 +47,5 @@ Hash type (md5/sha1): md5
 
 This project is for **educational purposes only**. Use responsibly.
 
-````
-
 
 
