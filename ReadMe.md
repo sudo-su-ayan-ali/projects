@@ -77,6 +77,7 @@ You may need to install dependencies for some of the tools. Install them using:
 
 ```bash
 pip install -r requirements.txt
+```
 Ensure Python 3 is installed prior to setup.
 
 ✅ Disclaimer
