@@ -89,7 +89,7 @@ Warning: Unauthorized access or usage of these tools against systems without per
 Feel free to fork this repository and submit pull requests. Suggestions and improvements are always welcome!
 
 📜 License
-This repository does not currently have a license. Please contact the me for usage permissions.
+This repository does not currently have a license. Please contact to me for usage permissions.
 
 yaml
 Copy
