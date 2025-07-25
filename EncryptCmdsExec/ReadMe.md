@@ -59,7 +59,7 @@ This token is stored with the encrypted command in `cmdstore.json`.
 
 bash
 
-````CopyEdit
+```CopyEdit
 python exec.py a1b2c3d4
 ```
 
