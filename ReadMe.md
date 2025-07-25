@@ -83,30 +83,31 @@ A secure one-time-token based command execution system. This tool encrypts shell
 1. **Generate a Token**
    ```bash
    python genrate_token.py
+   ```
 **Example Input:**
 
 bash
 
-CopyEdit
+```CopyEdit
 
-`Enter your command: echo "Secret Ops" Your command token: 9xG3JzPp`
-
+Enter your command: echo "Secret Ops" Your command token: 9xG3JzPp
+```
 2. **Execute the Token**
     
     bash
     
-    CopyEdit
+    ```CopyEdit
     
-    `python exec.py 9xG3JzPp`
-    
+    python exec.py 9xG3JzPp
+    ```
     **Output:**
     
     nginx
     
-    CopyEdit
+    ```CopyEdit
     
-    `Secret Ops`
-    
+    Secret Ops
+    ```
 
 > ⚠️ Important: Tokens are deleted after use. This tool is for controlled and ethical use only.
 
@@ -118,10 +119,10 @@ Install dependencies with:
 
 bash
 
-CopyEdit
+```CopyEdit
 
-`pip install -r requirements.txt`
-
+pip install -r requirements.txt
+```
 Make sure Python 3 is installed before setup.
 
 ---
@@ -140,6 +141,3 @@ Feel free to fork this repository and submit pull requests. Suggestions and impr
 📜 **License**  
 This repository does not currently have a license. Please contact me for usage permissions.
 
-yaml
-
-CopyEdit
