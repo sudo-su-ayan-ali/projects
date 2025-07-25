@@ -18,9 +18,10 @@ Ensure you have Python and the `cryptography` library installed.
 
 bash
 
-CopyEdit
 
-`pip install cryptography`
+`CopyEdit
+pip install cryptography
+`
 
 ---
 
@@ -30,25 +31,25 @@ CopyEdit
 
 bash
 
-CopyEdit
-
-`python genrate_token.py`
+`CopyEdit
+python genrate_token.py
+`
 
 Example input:
 
 bash
 
-CopyEdit
-
-`Enter your command: echo "Hello, Secure World!"`
+`CopyEdit
+Enter your command: echo "Hello, Secure World!"
+`
 
 Output:
 
 bash
 
-CopyEdit
-
-`Your command token: a1b2c3d4`
+`CopyEdit
+Your command token: a1b2c3d4
+`
 
 This token is stored with the encrypted command in `cmdstore.json`.
 
@@ -58,15 +59,15 @@ This token is stored with the encrypted command in `cmdstore.json`.
 
 bash
 
-CopyEdit
-
-`python exec.py a1b2c3d4`
+`CopyEdit
+python exec.py a1b2c3d4
+`
 
 Output:
 
-CopyEdit
-
-`Hello, Secure World!`
+`CopyEdit
+Hello, Secure World!
+`
 
 > The token is deleted after execution to prevent reuse.
 
