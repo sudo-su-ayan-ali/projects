@@ -1,41 +1,63 @@
-# 🛠️ Security Projects Collection
+# 🛡️ My Cybersecurity Projects
 
-This repository contains a set of cybersecurity and offensive security projects developed by [sudo-su-ayan-ali](https://github.com/sudo-su-ayan-ali). These tools demonstrate skills in penetration testing, enumeration, and exploitation.
 
-## 🔍 Projects Overview
+<p align="center"> <img src="https://img.shields.io/badge/Cybersecurity-Student-blue?style=flat-square" /> <img src="https://img.shields.io/badge/OSCP-Aspirant-red?style=flat-square" /> <img src="https://img.shields.io/badge/Bug%20Bounty-Hunter-brightgreen?style=flat-square" /> <img src="https://img.shields.io/badge/CTF-Player-yellow?style=flat-square" /> <img src="https://img.shields.io/badge/Automation-Enthusiast-orange?style=flat-square" /> <img src="https://img.shields.io/badge/Bodybuilder-%F0%9F%92%AA-lightgrey?style=flat-square" /> </p>
 
-| Project Name              | Description |
-|--------------------------|-------------|
-| **EncryptCmdsExec**      | A utility for encrypting and executing shell commands, likely used for obfuscation or post-exploitation purposes. |
-| **Recon + Subdomain Enumerator** | A reconnaissance tool to gather subdomains and related information from target domains. Useful during the information-gathering phase of a pentest. |
-| **hashcracker**          | A simple password hash cracking tool, potentially using dictionary or brute-force methods. |
-| **keylogger**            | A basic keylogger to capture keystrokes on a compromised machine (educational use only). |
-| **xss_hardcore_lab**     | A dedicated testing lab to explore and understand different types of Cross-Site Scripting (XSS) attacks. |
-| **xss_scanner**          | An automated scanner to detect XSS vulnerabilities in web applications. |
+---
+
+## 👋 About Me
+
+**Ayan Ali** (`sudo-su-ayan-ali`) · he/him 🧑‍💻  
+Cybersecurity Student | OSCP Aspirant | India 🇮🇳  
+Bug Bounty Hunter | CTF Player | Automation Enthusiast | Bodybuilder 💪
+
+> I’m passionate about cybersecurity, automation, and ethical hacking. I love building tools, solving CTFs, and pushing my limits both in tech and fitness.
+> 
+> **Let’s hack, automate, and grow together!**
+
+---
+
+## 🚩 Project Portfolio
+
+|Project|Description|
+|---|---|
+|[**EncryptCmdsExec**](https://lmarena.ai/c/EncryptCmdsExec)|🔐 Securely encrypt and execute system commands. Perfect for red teamers and penetration testers.|
+|[**Recon + Subdomain Enumerator**](https://lmarena.ai/c/Recon%20+%20Subdomain%20Enumerator)|🌐 Automates reconnaissance and subdomain enumeration for bug bounty and pentesting.|
+|[**hashcracker**](https://lmarena.ai/c/hashcracker)|🔓 Fast, flexible hash cracking tool supporting multiple algorithms. Great for CTFs and password recovery.|
+|[**keylogger**](https://lmarena.ai/c/keylogger.)|🕵️‍♂️ Educational keylogger to demonstrate keystroke logging and endpoint security.|
+|[**xss_hardcore_lab**](https://lmarena.ai/c/xss_hardcore_lab)|🧪 Advanced XSS lab for learning, testing, and mastering XSS payloads.|
+|[**xss_scanner**](https://lmarena.ai/c/xss_scanner)|🚨 Automated scanner to detect XSS vulnerabilities in web applications.|
 
 ---
 
 ## 🚀 Getting Started
 
-Clone the repository:
-```bash
-git clone https://github.com/sudo-su-ayan-ali/projects.git
-cd projects
-📦 Requirements
-Most projects may require Python and additional packages. For Python-based projects:
+1. **Clone the repository:**
+    
+    Bash
+    
+    ```
+    git clone https://github.com/sudo-su-ayan-ali/projects.git
+    cd projects
+    ```
+    
+2. **Explore each project:**
+    - Each folder contains its own README and setup instructions.
+    - Check dependencies and requirements for each tool.
 
-bash
-Copy
-Edit
-cd xss_scanner  # or any specific project
-pip install -r requirements.txt
-Make sure to read the ReadMe.md inside each project directory for detailed usage instructions.
+---
 
-⚠️ Disclaimer
-This repository is for educational and ethical purposes only. Unauthorized use of any tool for illegal activities is strictly prohibited and punishable under law. The author is not responsible for any misuse.
+## 🌐 Connect with Me
 
-📫 Contact
-Feel free to reach out via GitHub Issues for any bugs, questions, or collaboration ideas.
+- [GitHub](https://github.com/sudo-su-ayan-ali)
+- [LinkedIn](https://lmarena.ai/c/294c413b-b320-4421-a29c-2effaf3d9645#) <!-- Add your LinkedIn link -->
+- [Twitter](https://lmarena.ai/c/294c413b-b320-4421-a29c-2effaf3d9645#) <!-- Add your Twitter link -->
 
-📄 License
-This repository does not currently have a license file. Consider adding one (e.g., MIT or GPL) if you wish to allow others to reuse your code
+---
+
+> **Disclaimer:**  
+> All tools and scripts in this repository are for **educational and ethical purposes only**. Please use responsibly and always with proper authorization.
+
+---
+
+**Thanks for checking out my work! If you find these projects helpful, please star ⭐ this repo and connect with me.**
