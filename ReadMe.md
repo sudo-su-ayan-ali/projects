@@ -7,9 +7,7 @@
 
 ## 👋 About Me
 
-**Ayan Ali** (`sudo-su-ayan-ali`) · he/him 🧑‍💻  
-Cybersecurity Student | OSCP Aspirant | India 🇮🇳  
-Bug Bounty Hunter | CTF Player | Automation Enthusiast | Bodybuilder 💪
+I am a dedicated cybersecurity student with a strong interest in offensive security, automation, and ethical hacking. As an aspiring OSCP, I actively participate in Capture The Flag (CTF) competitions and bug bounty programs to sharpen my skills and contribute to a safer digital world. I am passionate about building innovative security tools and continuously expanding my knowledge in the ever-evolving field of cybersecurity.
 
 > I’m passionate about cybersecurity, automation, and ethical hacking. I love building tools, solving CTFs, and pushing my limits both in tech and fitness.
 > 
