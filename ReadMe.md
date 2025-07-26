@@ -7,7 +7,7 @@
 
 ## 👋 About Me
 
-**Ayan Ali** (`sudo-su-ayan-ali`) · he/him 🧑‍💻  
+I'm **Ayan Ali** (`sudo-su-ayan-ali`) · he/him 🧑‍💻  
 Cybersecurity Student | OSCP Aspirant | India 🇮🇳  
 Bug Bounty Hunter | CTF Player | Automation Enthusiast | Bodybuilder 💪
 
