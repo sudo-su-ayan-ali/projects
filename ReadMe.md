@@ -7,8 +7,8 @@
 
 ## 👋 About Me
 
-I'm **Ayan Ali** (`sudo-su-ayan-ali`). 
-\nCybersecurity Student | OSCP Aspirant | India 🇮🇳 |  
+I'm **Ayan Ali** (`sudo-su-ayan-ali`) 
+Cybersecurity Student | OSCP Aspirant | India 🇮🇳 |  
 Bug Bounty Hunter | CTF Player | Automation Enthusiast | Bodybuilder 💪
 
 > I’m passionate about cybersecurity, automation, and ethical hacking. I love building tools, solving CTFs, and pushing my limits both in tech and fitness.
