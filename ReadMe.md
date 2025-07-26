@@ -19,13 +19,13 @@ I am a dedicated cybersecurity student with a strong interest in offensive secur
 
 |Project|Description|
 |---|---|
-|[**EncryptCmdsExec**]|🔐 Securely encrypt and execute system commands. Perfect for red teamers and penetration testers.|
-|[**Recon + Subdomain Enumerator**]|🌐 Automates reconnaissance and subdomain enumeration for bug bounty and pentesting.|
-|[**hashcracker**]|🔓 Fast, flexible hash cracking tool supporting multiple algorithms. Great for CTFs and password recovery.|
-|[**keylogger**]|🕵️‍♂️ Educational keylogger to demonstrate keystroke logging and endpoint security.|
-|[**xss_hardcore_lab**]|🧪 Advanced XSS lab for learning, testing, and mastering XSS payloads.|
-|[**xss_scanner**]|🚨 Automated scanner to detect XSS vulnerabilities in web applications.|
-|[**Vpn_Server**]|📡 Install OpenVPN, configure securely, protect keys, enable firewall, ensure privacy.| 
+|**EncryptCmdsExec**|🔐 Securely encrypt and execute system commands. Perfect for red teamers and penetration testers.|
+|**Recon + Subdomain Enumerator**|🌐 Automates reconnaissance and subdomain enumeration for bug bounty and pentesting.|
+|**hashcracker**|🔓 Fast, flexible hash cracking tool supporting multiple algorithms. Great for CTFs and password recovery.|
+|**keylogger**|🕵️‍♂️ Educational keylogger to demonstrate keystroke logging and endpoint security.|
+|**xss_hardcore_lab**|🧪 Advanced XSS lab for learning, testing, and mastering XSS payloads.|
+|**xss_scanner**|🚨 Automated scanner to detect XSS vulnerabilities in web applications.|
+|**Vpn_Server**|📡 Install OpenVPN, configure securely, protect keys, enable firewall, ensure privacy.| 
 ---
 
 ## 🚀 Getting Started
