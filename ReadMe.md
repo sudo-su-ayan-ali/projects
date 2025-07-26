@@ -1,143 +1,41 @@
-# 🛠️ Projects Repository
+# 🛠️ Security Projects Collection
 
-Welcome to the **Projects** repository by [sudo-su-ayan-ali](https://github.com/sudo-su-ayan-ali)!  
-This repository is a collection of various cybersecurity and infosec-related tools and experiments.
+This repository contains a set of cybersecurity and offensive security projects developed by [sudo-su-ayan-ali](https://github.com/sudo-su-ayan-ali). These tools demonstrate skills in penetration testing, enumeration, and exploitation.
 
----
+## 🔍 Projects Overview
 
-## 🔍 Project Overview
-
-This repository showcases a variety of Python-based cybersecurity tools built for **learning**, **research**, and **ethical hacking** purposes. These projects cover core areas such as reconnaissance, web vulnerability testing, keylogging, and cryptographic hash cracking. They aim to help beginners and intermediate learners understand how real-world hacking techniques work—while emphasizing ethical usage.
-
-Each tool is designed with simplicity and modularity in mind, making it easy to explore and modify for educational penetration testing scenarios or Capture The Flag (CTF) competitions.
-
-> ⚠️ All tools are strictly for legal and authorized testing in controlled environments.
-
----
-
-## 📁 Projects
-
-### 🔍 Recon + Subdomain Enumerator
-A tool focused on reconnaissance and subdomain enumeration. Useful for asset discovery and information gathering during a penetration test or bug bounty.
-
-**Features:**
-- Collects hosts using OSINT
-- Subdomain enumeration
-- Passive and active scanning
+| Project Name              | Description |
+|--------------------------|-------------|
+| **EncryptCmdsExec**      | A utility for encrypting and executing shell commands, likely used for obfuscation or post-exploitation purposes. |
+| **Recon + Subdomain Enumerator** | A reconnaissance tool to gather subdomains and related information from target domains. Useful during the information-gathering phase of a pentest. |
+| **hashcracker**          | A simple password hash cracking tool, potentially using dictionary or brute-force methods. |
+| **keylogger**            | A basic keylogger to capture keystrokes on a compromised machine (educational use only). |
+| **xss_hardcore_lab**     | A dedicated testing lab to explore and understand different types of Cross-Site Scripting (XSS) attacks. |
+| **xss_scanner**          | An automated scanner to detect XSS vulnerabilities in web applications. |
 
 ---
 
-### 🖥️ Keylogger
-A basic keylogger for educational or ethical testing purposes.
+## 🚀 Getting Started
 
-**Features:**
-- Logs keystrokes
-- Saves activity in a file
-- Minimal & easy-to-use implementation
-
-> ⚠️ Note: **Only use this module in a controlled, ethical, and legal environment.**
-
----
-
-### 🧪 XSS Hardcore Lab
-A set of scripts and tools focused on testing and practicing **Cross-Site Scripting (XSS)** attacks.
-
-**Features:**
-- Lab-like environment
-- Payload injection
-- Filters and bypass testing
-
----
-
-### 🕵️ XSS Scanner
-A script or tool built to scan targets for XSS vulnerabilities.
-
-**Features:**
-- Detects reflective/stored XSS
-- Payload-based detection
-- Simple and fast scanning
-
----
-
-### 🔐 Hash Cracker (MD5 / SHA1)
-A command-line tool to crack hashes using a wordlist attack (dictionary attack).
-
-**Features:**
-- Supports `md5` and `sha1`
-- Uses custom wordlists (e.g., rockyou.txt)
-- Simple interface for learning and testing
-
----
-
-### 🧾 Encrypted Command Executor
-A secure one-time-token based command execution system. This tool encrypts shell commands and allows them to be executed only once using a token.
-
-**Features:**
-- Encrypts commands with Fernet (symmetric encryption)
-- Generates one-time tokens
-- Deletes token after use to prevent reuse
-- Useful in secure scripting scenarios
-
-#### 🔧 Usage
-
-1. **Generate a Token**
-   ```bash
-   python genrate_token.py
-   ```
-**Example Input:**
+Clone the repository:
+```bash
+git clone https://github.com/sudo-su-ayan-ali/projects.git
+cd projects
+📦 Requirements
+Most projects may require Python and additional packages. For Python-based projects:
 
 bash
-
-```CopyEdit
-
-Enter your command: echo "Secret Ops" Your command token: 9xG3JzPp
-```
-2. **Execute the Token**
-    
-    bash
-    
-    ```CopyEdit
-    
-    python exec.py 9xG3JzPp
-    ```
-    **Output:**
-    
-    nginx
-    
-    ```CopyEdit
-    
-    Secret Ops
-    ```
-
-> ⚠️ Important: Tokens are deleted after use. This tool is for controlled and ethical use only.
-
----
-
-## 📦 Requirements
-
-Install dependencies with:
-
-bash
-
-```CopyEdit
-
+Copy
+Edit
+cd xss_scanner  # or any specific project
 pip install -r requirements.txt
-```
-Make sure Python 3 is installed before setup.
+Make sure to read the ReadMe.md inside each project directory for detailed usage instructions.
 
----
+⚠️ Disclaimer
+This repository is for educational and ethical purposes only. Unauthorized use of any tool for illegal activities is strictly prohibited and punishable under law. The author is not responsible for any misuse.
 
-✅ **Disclaimer**  
-This project is intended only for educational and ethical penetration testing purposes.  
-**Unauthorized access or usage of these tools against systems without permission is illegal.** Use them only in test environments or with explicit authorization.
+📫 Contact
+Feel free to reach out via GitHub Issues for any bugs, questions, or collaboration ideas.
 
----
-
-🙌 **Contributions**  
-Feel free to fork this repository and submit pull requests. Suggestions and improvements are always welcome!
-
----
-
-📜 **License**  
-This repository does not currently have a license. Please contact me for usage permissions.
-
+📄 License
+This repository does not currently have a license file. Consider adding one (e.g., MIT or GPL) if you wish to allow others to reuse your code
