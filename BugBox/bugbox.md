@@ -12,4 +12,12 @@ If you prefer to skip manual installation, you can download the ready-to-use OVA
 > - **Password:** `9289`
 >     
 > - Web app logins are the same as listed in the **[Login Credentials](#-login-credentials)** section.
+>     
 
+---
+
+### **📖 Manual Installation Guide**
+
+If you’d rather set up DVWA and bWAPP yourself, follow this detailed step-by-step blog post:
+
+🔗 **[BugBox Manual Installation Guide](https://github.com/sudo-su-ayan-ali/websec_writeups/blob/main/BugBox.md)**
