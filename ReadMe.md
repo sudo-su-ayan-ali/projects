@@ -25,7 +25,7 @@ I am a dedicated cybersecurity student with a strong interest in offensive secur
 | **keylogger**                    | 🕵️‍♂️ Educational keylogger to demonstrate keystroke logging and endpoint security.                       |
 | **xss_hardcore_lab**             | 🧪 Advanced XSS lab for learning, testing, and mastering XSS payloads.                                     |
 | **xss_scanner**                  | 🚨 Automated scanner to detect XSS vulnerabilities in web applications.                                    |
-| **BugBox**                       | 💻 Vulnerable Web Applications Setup for Pentesting Practice                                               |
+| **BugBox**                       | 💻 Vulnerable Web Applications Setup for Pentesting Practice VM.                                            |
 | **Vpn_Server**                   | 📡OpenVPN, configure securely, protect keys, enable firewall, ensure privacy.                              |
 
 
