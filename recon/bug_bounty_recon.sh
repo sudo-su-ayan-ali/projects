@@ -4,7 +4,8 @@ set -euo pipefail
 # ─────────────────────────────────────────────
 #  RECON AUTOMATION SCRIPT
 #  Tools: subfinder, assetfinder, ffuf, dirsearch
-#         httpx / httpx-toolkit, aquatone, nmap
+#         httpx / httpx-toolkit, aquatone, nmap 
+#         seclists wordlists  
 # ─────────────────────────────────────────────
 
 # ── Colors ──────────────────────────────────
@@ -40,7 +41,7 @@ case "$distro" in
     if [[ "$install_tools" -eq 1 ]]; then
       info "Installing tools via apt..."
       sudo apt update -y
-      sudo apt install -y subfinder assetfinder ffuf dirsearch httpx-toolkit aquatone nmap
+      sudo apt install -y subfinder assetfinder ffuf dirsearch httpx-toolkit aquatone nmap seclists
       success "Tools installed."
     else
       warn "Skipping tool installation."
@@ -52,7 +53,7 @@ case "$distro" in
     read -rp "Install required tools? [1=yes / 2=no]: " install_tools
     if [[ "$install_tools" -eq 1 ]]; then
       info "Installing tools via pacman..."
-      sudo pacman -S --noconfirm subfinder assetfinder ffuf dirsearch httpx aquatone nmap
+      sudo pacman -S --noconfirm subfinder assetfinder ffuf dirsearch httpx aquatone nmap seclists
       success "Tools installed."
     else
       warn "Skipping tool installation."
@@ -89,15 +90,13 @@ assetfinder --subs-only "$subdomain" > assetfinder.txt || warn "assetfinder retu
 
 # ── FFUF vhost brute-force ───────────────────
 echo ""
-read -rp "Enter wordlist path for subdomain/vhost enum: " wordlist_for_subdomain_enum
-
-[[ ! -f "$wordlist_for_subdomain_enum" ]] && error "Wordlist not found: $wordlist_for_subdomain_enum"
+#[[ ! -f "$wordlist_for_subdomain_enum" ]] && error "Wordlist not found: $wordlist_for_subdomain_enum"
 
 info "Running ffuf vhost brute-force..."
 ffuf \
   -u "http://$subdomain/" \
   -H "Host: FUZZ.$subdomain" \
-  -w "$wordlist_for_subdomain_enum" \
+  -w /usr/share/seclists/Discovery/Web-Content/big.txt \
   -mc 200,301,302,403 \
   -t 40 \
   -of json \
