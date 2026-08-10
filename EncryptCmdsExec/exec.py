@@ -28,6 +28,7 @@ command = fernet.decrypt(enc_cmd.encode()).decode()
 subprocess.run(command, shell=True)
 
 # Delete token after execution
+
 del cmdmap[token]
 with open("cmdstore.json", "w") as f:
     json.dump(cmdmap, f)
